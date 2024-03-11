@@ -8,16 +8,16 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   return (
     <React.Fragment>
-      <header className="bg-sky-300 flex items-center justify-between sm:justify-evenly p-2">
-        {window.innerWidth <= 390 && <Hamburger />}
+      <header className="sticky top-0 bg-sky-300 flex items-center justify-between sm:justify-evenly p-2">
+        {window.innerWidth <= 500 && <Hamburger />}
         <div>
           <p className="font-canderville font-bold text-red-700 text-3xl">
             Places
           </p>
         </div>
-        {window.innerWidth > 390 && <TopNav />}
+        {window.innerWidth > 500 && <TopNav />}
         <div className="w-10">
-          <p>{onlineStatus ? "🟢" : "🔴"}</p>
+          <p>{onlineStatus ? `🟢` : `🔴`}</p>
         </div>
       </header>
     </React.Fragment>

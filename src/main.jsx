@@ -15,10 +15,11 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
+import ErrorElement from "./components/ErrorElement";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path="/" element={<App />} errorElement={<ErrorElement />}>
       <Route index element={<LoginPage />} />
       <Route path="browse" element={<BrowsePage />}>
         <Route index element={<PostsLists />} />

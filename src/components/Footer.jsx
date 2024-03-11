@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="text-center mt-2">
       <p className="font-canderville font-bold text-sky-600 text-3xl">
-        Made with love by sourabh suman
+        Made with love by places
       </p>
     </div>
   );

@@ -5,9 +5,12 @@ import { PostSchema } from "../utils/schema/postSchema";
 import { useSelector } from "react-redux";
 import { FeedImageSchema } from "../utils/schema/FeedImageSchema";
 import { useNavigate } from "react-router-dom";
+import { OFFSITE_IMAGE_SIZE } from "../utils/constants";
 
 const FeedPage = () => {
   const [imagePreview, setImagePreview] = useState("");
+  const [feedPageLoader, setFeedPageLoader] = useState(false);
+  const [error, setError] = useState("");
   const descRef = useRef(null);
   const hashtagRef = useRef(null);
   const navigate = useNavigate();
@@ -18,6 +21,13 @@ const FeedPage = () => {
     e.preventDefault();
 
     if (imagePreview === "") return;
+
+    if (imagePreview.size >= OFFSITE_IMAGE_SIZE) {
+      setError("Image Size should be less than 30MB");
+      return;
+    }
+
+    setFeedPageLoader(true);
 
     const newForm = new FormData();
     newForm.append("file", imagePreview);
@@ -72,6 +82,7 @@ const FeedPage = () => {
       );
 
       fireBaseDB.createPostsDocument(postObject);
+      setFeedPageLoader(false);
       navigate("/browse");
     } catch (error) {
       console.log(error?.message);
@@ -129,11 +140,16 @@ const FeedPage = () => {
             <img src={URL.createObjectURL(imagePreview)} alt="No image src" />
           </div>
         )}
-        <div>
-          <button className="border-2 px-2 rounded-md bg-" type="submit">
-            Submit
+        <div className="mt-5 text-center">
+          <button className="px-2 rounded-md bg-orange-400" type="submit">
+            Add post
           </button>
         </div>
+        {error && (
+          <div>
+            <p className="text-red-500 text-center">{error}</p>
+          </div>
+        )}
       </form>
     </PostWrapper>
   );
