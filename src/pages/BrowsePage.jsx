@@ -8,7 +8,7 @@ const BrowsePage = () => {
   return (
     <React.Fragment>
       <Header />
-      {window.innerWidth <= 390 && <SideNav />}
+      {window.innerWidth <= 500 && <SideNav />}
       <Outlet />
       <Footer />
     </React.Fragment>
