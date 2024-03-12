@@ -19,7 +19,7 @@ const PostsLists = () => {
     );
 
   return (
-    <PostWrapper>
+    <PostWrapper className="flex flex-col-reverse">
       {Object.keys(postsLists).map((childSnapSortId) => {
         console.log(childSnapSortId);
         return (
@@ -33,61 +33,6 @@ const PostsLists = () => {
           />
         );
       })}
-      {/* <PostsCard
-        name={postsLists.userName}
-        profileImg={
-          "https://images.pexels.com/photos/19536432/pexels-photo-19536432/free-photo-of-vase-with-decorative-branches.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-        tags={["#find", "#file"]}
-        postDescription={"Hi this is sourabh suman"}
-        postImage={
-          "https://images.pexels.com/photos/20448164/pexels-photo-20448164/free-photo-of-a-woman-in-a-floral-dress-holding-flowers-on-a-dirt-road.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-      />
-      <PostsCard
-        name={"Sourabh Suman"}
-        profileImg={
-          "https://images.pexels.com/photos/19536432/pexels-photo-19536432/free-photo-of-vase-with-decorative-branches.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-        tags={["#find", "#file"]}
-        postDescription={"Hi this is sourabh suman"}
-        postImage={
-          "https://images.pexels.com/photos/20448164/pexels-photo-20448164/free-photo-of-a-woman-in-a-floral-dress-holding-flowers-on-a-dirt-road.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-      />
-      <PostsCard
-        name={"Sourabh Suman"}
-        profileImg={
-          "https://images.pexels.com/photos/19536432/pexels-photo-19536432/free-photo-of-vase-with-decorative-branches.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-        tags={["#find", "#file"]}
-        postDescription={"Hi this is sourabh suman"}
-        postImage={
-          "https://images.pexels.com/photos/20448164/pexels-photo-20448164/free-photo-of-a-woman-in-a-floral-dress-holding-flowers-on-a-dirt-road.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-      />
-      <PostsCard
-        name={"Sourabh Suman"}
-        profileImg={
-          "https://images.pexels.com/photos/19536432/pexels-photo-19536432/free-photo-of-vase-with-decorative-branches.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-        tags={["#find", "#file"]}
-        postDescription={"Hi this is sourabh suman"}
-        postImage={
-          "https://images.pexels.com/photos/20448164/pexels-photo-20448164/free-photo-of-a-woman-in-a-floral-dress-holding-flowers-on-a-dirt-road.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-      />
-      <PostsCard
-        name={"Sourabh Suman"}
-        profileImg={
-          "https://images.pexels.com/photos/19536432/pexels-photo-19536432/free-photo-of-vase-with-decorative-branches.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-        tags={["#find", "#file"]}
-        postDescription={"Hi this is sourabh suman"}
-        postImage={
-          "https://images.pexels.com/photos/20448164/pexels-photo-20448164/free-photo-of-a-woman-in-a-floral-dress-holding-flowers-on-a-dirt-road.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-        }
-      /> */}
     </PostWrapper>
   );
 };
